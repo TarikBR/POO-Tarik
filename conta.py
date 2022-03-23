@@ -15,8 +15,12 @@ class Conta:
     def limite(self, limite):
         self._limite = limite
 
-    def sacar(self, sacar):
-        if sacar <= self._limite:
-            self._saldo -= sacar
+    def sacar(self, valor):
+        if valor <= self._limite:
+            self._saldo -= valor
         else:
             print("Limite indisponível!")
+
+    def transfere(self, valor, destino):
+        self._saldo -= valor
+        destino._saldo += valor
